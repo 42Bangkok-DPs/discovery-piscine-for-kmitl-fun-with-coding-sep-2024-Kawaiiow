@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="background.css">
+    <script>
+        const ran_rgb = () => { return Math.floor(Math.random() * 256) }
+        const change_color = () =>
+        {
+            document.body.style.background = `rgb(${ran_rgb()}, ${ran_rgb()}, ${ran_rgb()})`
+        }
+    </script>
+</head>
+<body>
+    <button type="button" onclick="change_color()">Click me!</button>
+</body>
+</html>
