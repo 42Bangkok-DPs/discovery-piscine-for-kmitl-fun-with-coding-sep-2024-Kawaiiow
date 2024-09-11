@@ -35,6 +35,13 @@
         circle.style.backgroundColor = colors[0]
         colors.push(c)
     }
+    
+    const rchng_color = () =>
+    {
+        let c = colors.pop()
+        colors.unshift(c)
+        circle.style.backgroundColor = colors[0]
+    }
 
     const add = () =>
     {
@@ -61,8 +68,8 @@
             height -= 5
             circle.style.width = `${width}px`
             circle.style.height = `${height}px`
-            chng_color();
         }
+        rchng_color();
     }
 
 </script>
