@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div  id = "circle" onclick="add()" onmouseout="dec()"></div>
+</body>
+
+<style>
+    body
+    {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+    #circle
+    {
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        background: red;
+        display: flex;
+    }
+</style>
+
+<script>
+    let width = 200
+    let height = 200
+    const circle = document.getElementById("circle")
+    const colors = ['red', 'green', 'blue']
+
+    const chng_color = ()  =>
+    {
+        let c = colors.shift()
+        circle.style.backgroundColor = colors[0]
+        colors.push(c)
+    }
+
+    const add = () =>
+    {
+        if(width <= 420 && height <= 420)
+        {
+            width += 10
+            height += 10
+            circle.style.width = `${width}px`
+            circle.style.height = `${height}px`
+            chng_color();
+            return
+        }
+
+        width = 200;
+        height = 200;
+        chng_color();
+    }
+
+    const dec = () =>
+    {
+        if(width >= 200 && height >= 200)
+        {
+            width -= 5
+            height -= 5
+            circle.style.width = `${width}px`
+            circle.style.height = `${height}px`
+            chng_color();
+        }
+    }
+
+</script>
+
+</html>
